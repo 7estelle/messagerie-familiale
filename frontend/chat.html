@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/output.css">
+    <title>Conversation</title>
+</head>
+
+<body>
+    <div class="tablet">
+        <main>
+            <section class="users-block">
+                <img src="./assets/medias/coeurs.svg" alt="">
+                <div class="users-block__content">
+                    <h1>Famille Renou</h1>
+                    <div class="settings-box">
+                        <img src="/frontend/assets/medias/settings.svg" alt="">
+                        <p>Paramètres</p>
+                    </div>
+                    <div class="connected-box">
+                        <div class="green-light"></div>
+                        <p>En ligne</p>
+                    </div>
+                    <!-- <div class="blur"></div> -->
+                    <div class="users-container">
+                        <div id="users-list"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="chat-block">
+                <div id="message-list">
+                </div>
+
+                <div class="chat-block__item">
+                    <div id="writing-area" style="display: none;">
+                        <div class="writing-area-flex">
+                            <div class="writing-area-content">
+                                <form>
+                                    <input placeholder="Ecrivez votre message dans cet espace" value=""
+                                        id="messageInput" class="message-input">
+                                </form>
+                                <button onclick="hideInput()" class="close-btn">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="msg-types">
+                        <button onclick="showInput()" class="msg-types__text">Ecrire un message</button>
+                        <button class="msg-types__audio">Enregistrer un vocal</button>
+                        <button class="msg-types__photo">Sélectionner une photo</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Socket.IO installation -->
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+        integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous">
+    </script>
+    <script src="app.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+</body>
+
+</html>
